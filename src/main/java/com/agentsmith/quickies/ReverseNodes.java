@@ -1,7 +1,7 @@
 package com.agentsmith.quickies;
 
 /**
- * Simple Node, containing a link to the next node and a value.
+ * Reversing a linked list.
  * <p/>
  * User: rmarquez
  * Date: 7/27/13
@@ -44,11 +44,11 @@ public class ReverseNodes<E>
     {
         Node<String> node = new Node<>("A", new Node<>("B", new Node<>("C", new Node<>("D", null))));
 
-        System.out.println("Reversing: " + node);
+        System.out.println("Reversing: "+node);
 
         ReverseNodes<String> rll = new ReverseNodes<>();
         Node<String> reversedNodes = rll.reverse(node);
 
-        System.out.println("Reversed: " + reversedNodes);
+        System.out.println("Reversed: "+reversedNodes);
     }
 }
