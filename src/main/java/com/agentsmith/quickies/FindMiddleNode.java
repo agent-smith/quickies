@@ -1,8 +1,10 @@
 package com.agentsmith.quickies;
 
 /**
- * Reversing a linked list.  Basically, use to pointers and advance one pointer every time and the other pointer
- * every other time.  Then, when the furthest pointer has reached the end, the other pointer is in the middle.
+ * Given N nodes, find the middle one.
+ * <p/>
+ * Basically, use to pointers and advance one pointer every time and the other pointer every other time.  Then, when
+ * the furthest pointer has reached the end, the other pointer is in the middle.
  * <p/>
  * User: rmarquez
  * Date: 7/27/13
