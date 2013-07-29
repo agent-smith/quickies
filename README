@@ -1,7 +1,7 @@
 Collection of quick problems:
 
-1) Reversing a string
-2) Reversing a linked list
+1) Reversing a string.
+2) Given N nodes, reverse them.
 3) Dynamic programming approach to calculating the nth fibonacci number (with memoization/caching).
 4) Given N nodes, find the middle one.
 5) ...
