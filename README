@@ -2,4 +2,5 @@ Collection of quick problems:
 
 1) Reversing a string
 2) Reversing a linked list
-3) ...
+3) Dynamic programming approach to calculating the nth fibonacci number (with memoization/caching).
+4) ...
