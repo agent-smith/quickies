@@ -5,4 +5,5 @@ Collection of quick problems:
 3) Given N nodes, find the middle one.
 4) Dynamic programming approach to calculating the nth fibonacci number (with memoization/caching).
 5) Finding the missing number in an array of integers from 1..N.
-6) ...
+6) Given an array of ints, find all pairs of ints that sum to number N.
+7) ...
