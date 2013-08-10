@@ -33,7 +33,7 @@ public class ReverseNodes<E>
         // (e.g. nextNode = B->C->null)
         Node<E> reverse = reverse(nextNode);
 
-        // link the copy of the next node to the current node
+        // link the copy of the next node's next node to the current node
         // (e.g. if reverse = C->B->null, then nextNode.nextNode = C->B->A->null)
         nextNode.nextNode = node;
 

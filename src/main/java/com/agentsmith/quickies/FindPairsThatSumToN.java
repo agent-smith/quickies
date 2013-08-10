@@ -12,9 +12,9 @@ public class FindPairsThatSumToN
 {
     /**
      * This approach does not sort the array first.  It keeps track of all differences in a Map<Integer, Integer>,
-     * where the key is nextNum and the value is N-nextNum.  Then, as we linearly seach through the array of nums,
-     * we check whether the array of nums contains N-nextNum.  If so, then that's a match.  If not,
-     * then add (nextNum, N-nextNum) to the map and keep traversing the array.
+     * where the key is nextNum and the value is (N - nextNum).  Then, as we linearly search through the array of nums,
+     * we check whether the array of nums contains (N - nextNum).  If so, then that's a match.  If not,
+     * then add (nextNum, (N - nextNum)) to the map and keep traversing the array.
      */
     public Map<Integer, Integer> findPairsNoSort(int[] nums, int N)
     {

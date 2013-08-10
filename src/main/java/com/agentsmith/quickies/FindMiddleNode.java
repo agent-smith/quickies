@@ -3,7 +3,7 @@ package com.agentsmith.quickies;
 /**
  * Given N nodes, find the middle one.
  * <p/>
- * Basically, use to pointers and advance one pointer every time and the other pointer every other time.  Then, when
+ * Basically, use two pointers and advance one pointer every time and the other pointer every other time.  Then, when
  * the furthest pointer has reached the end, the other pointer is in the middle.
  * <p/>
  * User: rmarquez
