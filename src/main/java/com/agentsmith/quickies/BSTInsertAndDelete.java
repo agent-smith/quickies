@@ -61,12 +61,12 @@ public class BSTInsertAndDelete<KEY extends Comparable<KEY>, VAL>
 
             // Pulls the right child upward
             node = min(temp.right);
-            node.left = deleteMin(temp.right);
+            node.right = deleteMin(temp.right);
             node.left = temp.left;
 
             // OR... could do this - it's the same thing, but pulls the left child upward
             // node = max(temp.left);
-            // node.right = deleteMax(temp.left);
+            // node.left = deleteMax(temp.left);
             // node.right = temp.right;
         }
 
