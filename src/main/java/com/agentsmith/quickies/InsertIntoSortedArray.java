@@ -16,12 +16,10 @@ import java.util.Arrays;
  * Date: 8/10/13
  * Time: 11:36 AM
  */
-public class InsertIntoSortedArray
-{
+public class InsertIntoSortedArray {
     private int[] arr;
 
-    public InsertIntoSortedArray(int[] sortedArr)
-    {
+    public InsertIntoSortedArray(int[] sortedArr) {
         arr = sortedArr;
     }
 
@@ -59,8 +57,7 @@ public class InsertIntoSortedArray
         return result;
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         int sortedArr1[] = new int[] { 3, 4, 6, 7, 8, 9, 10 };
         System.out.println("Adding key '5' to sorted array: " + Arrays.toString(sortedArr1));
         InsertIntoSortedArray f1 = new InsertIntoSortedArray(sortedArr1);
