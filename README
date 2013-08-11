@@ -7,4 +7,5 @@ Collection of quick problems:
 5) Finding the missing number in an array of integers from 1..N.
 6) Given an array of ints, find all pairs of ints that sum to number N.
 7) Given a sorted array of ints, insert a new element into it.
-8) ...
+8) Insert/Delete into/from binary tree. (i.e. BST impl).
+9) ...
