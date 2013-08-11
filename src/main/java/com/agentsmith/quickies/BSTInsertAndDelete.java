@@ -103,7 +103,7 @@ public class BSTInsertAndDelete<KEY extends Comparable<KEY>, VAL>
         if (node.right == null) {
             return node.left;
         }
-        node.right = deleteMin(node.right);
+        node.right = deleteMax(node.right);
         return node;
     }
 
