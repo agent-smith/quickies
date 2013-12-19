@@ -6,7 +6,7 @@ import java.util.Map;
 
 /**
  * Given an array of integers, find all pairs of integers that sum to number N.
- * e.g. given { 10, -5, 20, 0, -10 }, the pairs are: (0, 10) and (-10, 20)
+ * e.g. given { 10, -5, 20, 0, -10 }, the pairs that sum to 10 are: (0, 10) and (-10, 20)
  */
 public class FindPairsThatSumToN
 {
