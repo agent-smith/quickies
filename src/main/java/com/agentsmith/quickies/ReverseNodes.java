@@ -7,16 +7,33 @@ package com.agentsmith.quickies;
  * Date: 7/27/13
  * Time: 11:35 PM
  */
-public class ReverseNodes<E>
+public class ReverseNodes
 {
-    public Node<E> reverse(Node<E> node)
+    public static <E> Node<E> reverseIterative(Node<E> node)
     {
-        if (node == null)
+        if (node == null || node.nextNode == null)
         {
-            return null;
+            return node;
         }
 
-        if (node.nextNode == null)
+        Node<E> prev = null;
+        Node<E> curr = node;
+        Node<E> next;
+
+        while (curr != null)
+        {
+            next = curr.nextNode;
+            curr.nextNode = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        return prev;
+    }
+
+    public static <E> Node<E> reverseRecursive(Node<E> node)
+    {
+        if (node == null || node.nextNode == null)
         {
             return node;
         }
@@ -31,10 +48,10 @@ public class ReverseNodes<E>
 
         // pass the copy of the next node to the recursive call
         // (e.g. nextNode = B->C->null)
-        Node<E> reverse = reverse(nextNode);
+        Node<E> reverse = reverseRecursive(nextNode);
 
         // link the copy of the next node's next node to the current node
-        // (e.g. if reverse = C->B->null, then nextNode.nextNode = C->B->A->null)
+        // (e.g. if reverseRecursive = C->B->null, then nextNode.nextNode = C->B->A->null)
         nextNode.nextNode = node;
 
         return reverse;
@@ -42,13 +59,14 @@ public class ReverseNodes<E>
 
     public static void main(String[] args)
     {
-        Node<String> node = new Node<>("A", new Node<>("B", new Node<>("C", new Node<>("D", null))));
+        Node<String> nodes = new Node<>("A", new Node<>("B", new Node<>("C", new Node<>("D", null))));
+        System.out.println("Reversing nodes recursively: " + nodes);
+        Node<String> reversedNodes = ReverseNodes.reverseRecursive(nodes);
+        System.out.println("Recursively Reversed: "+reversedNodes);
 
-        System.out.println("Reversing: "+node);
-
-        ReverseNodes<String> rll = new ReverseNodes<>();
-        Node<String> reversedNodes = rll.reverse(node);
-
-        System.out.println("Reversed: "+reversedNodes);
+        nodes = new Node<>("A", new Node<>("B", new Node<>("C", new Node<>("D", null))));
+        System.out.println("\nReversing nodes iteratively: " + nodes);
+        reversedNodes = ReverseNodes.reverseIterative(nodes);
+        System.out.println("Iteratively Reversed: "+reversedNodes);
     }
 }
