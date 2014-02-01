@@ -9,28 +9,6 @@ package com.agentsmith.quickies;
  */
 public class ReverseNodes
 {
-    public static <E> Node<E> reverseIterative(Node<E> node)
-    {
-        if (node == null || node.nextNode == null)
-        {
-            return node;
-        }
-
-        Node<E> prev = null;
-        Node<E> curr = node;
-        Node<E> next;
-
-        while (curr != null)
-        {
-            next = curr.nextNode;
-            curr.nextNode = prev;
-            prev = curr;
-            curr = next;
-        }
-
-        return prev;
-    }
-
     public static <E> Node<E> reverseRecursive(Node<E> node)
     {
         if (node == null || node.nextNode == null)
@@ -57,11 +35,48 @@ public class ReverseNodes
         return reverse;
     }
 
+    public static <E> Node<E> reverseRecursiveSimple(Node<E> prev, Node<E> curr)
+    {
+        Node<E> next = curr.nextNode;
+        curr.nextNode = prev;
+
+        if (next != null) return reverseRecursiveSimple(curr, next);
+
+        return curr;
+    }
+
+    public static <E> Node<E> reverseIterative(Node<E> node)
+    {
+        if (node == null || node.nextNode == null)
+        {
+            return node;
+        }
+
+        Node<E> prev = null;
+        Node<E> curr = node;
+        Node<E> next;
+
+        while (curr != null)
+        {
+            next = curr.nextNode;
+            curr.nextNode = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        return prev;
+    }
+
     public static void main(String[] args)
     {
         Node<String> nodes = new Node<>("A", new Node<>("B", new Node<>("C", new Node<>("D", null))));
         System.out.println("Reversing nodes recursively: " + nodes);
         Node<String> reversedNodes = ReverseNodes.reverseRecursive(nodes);
+        System.out.println("Recursively Reversed: "+reversedNodes);
+
+        nodes = new Node<>("A", new Node<>("B", new Node<>("C", new Node<>("D", null))));
+        System.out.println("\nReversing nodes recursively: " + nodes);
+        reversedNodes = ReverseNodes.reverseRecursiveSimple(null, nodes);
         System.out.println("Recursively Reversed: "+reversedNodes);
 
         nodes = new Node<>("A", new Node<>("B", new Node<>("C", new Node<>("D", null))));

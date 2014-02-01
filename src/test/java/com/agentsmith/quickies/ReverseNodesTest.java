@@ -61,6 +61,53 @@ public class ReverseNodesTest
         assertEquals(new Node<>("D", new Node<>("C", new Node<>("B", new Node<>("A", null)))), actual);
     }
 
+    // Recursive Simple tests
+
+    @Test
+    public void reverseRecursiveSimple_NullNode()
+    {
+        Node<String> node = null;
+
+        Node<String> actual = ReverseNodes.reverseRecursive(node);
+        assertNull(actual);
+    }
+
+    @Test
+    public void reverseRecursiveSimple_OneNode()
+    {
+        Node<String> node = new Node<>("A", null);
+
+        Node<String> actual = ReverseNodes.reverseRecursiveSimple(null, node);
+        assertEquals(new Node<>("A", null), actual);
+    }
+
+    @Test
+    public void reverseRecursiveSimple_TwoNodes()
+    {
+        Node<String> node = new Node<>("A", new Node<>("B", null));
+
+        Node<String> actual = ReverseNodes.reverseRecursiveSimple(null, node);
+        assertEquals(new Node<>("B", new Node<>("A", null)), actual);
+    }
+
+    @Test
+    public void reverseRecursiveSimple_ThreeNodes()
+    {
+        Node<String> node = new Node<>("A", new Node<>("B", new Node<>("C", null)));
+
+        Node<String> actual = ReverseNodes.reverseRecursiveSimple(null, node);
+        assertEquals(new Node<>("C", new Node<>("B", new Node<>("A", null))), actual);
+    }
+
+    @Test
+    public void reverseRecursiveSimple_FourNodes()
+    {
+        Node<String> node = new Node<>("A", new Node<>("B", new Node<>("C", new Node<>("D", null))));
+
+        Node<String> actual = ReverseNodes.reverseRecursiveSimple(null, node);
+        assertEquals(new Node<>("D", new Node<>("C", new Node<>("B", new Node<>("A", null)))), actual);
+    }
+
     // Iterative tests
 
     @Test
