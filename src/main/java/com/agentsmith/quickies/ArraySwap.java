@@ -5,7 +5,7 @@ import java.util.Arrays;
 import static java.lang.String.format;
 
 /**
- * Swaping to elements of an array.
+ * Swaping two elements of an array.
  * <p/>
  * User: rmarquez
  * Date: 9/28/13
