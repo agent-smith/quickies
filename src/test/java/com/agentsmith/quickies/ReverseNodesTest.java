@@ -68,7 +68,7 @@ public class ReverseNodesTest
     {
         Node<String> node = null;
 
-        Node<String> actual = ReverseNodes.reverseRecursive(node);
+        Node<String> actual = ReverseNodes.reverseRecursiveSimple(null, node);
         assertNull(actual);
     }
 

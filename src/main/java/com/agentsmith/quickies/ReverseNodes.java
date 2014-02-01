@@ -11,10 +11,7 @@ public class ReverseNodes
 {
     public static <E> Node<E> reverseRecursive(Node<E> node)
     {
-        if (node == null || node.nextNode == null)
-        {
-            return node;
-        }
+        if (node == null || node.nextNode == null) return node;
 
         // copy the next node
         // (e.g. if node = A->B->C->null, then nextNode = B->C->null)
@@ -37,6 +34,8 @@ public class ReverseNodes
 
     public static <E> Node<E> reverseRecursiveSimple(Node<E> prev, Node<E> curr)
     {
+        if (curr == null) return curr;
+
         Node<E> next = curr.nextNode;
         curr.nextNode = prev;
 
@@ -47,10 +46,7 @@ public class ReverseNodes
 
     public static <E> Node<E> reverseIterative(Node<E> node)
     {
-        if (node == null || node.nextNode == null)
-        {
-            return node;
-        }
+        if (node == null || node.nextNode == null) return node;
 
         Node<E> prev = null;
         Node<E> curr = node;
