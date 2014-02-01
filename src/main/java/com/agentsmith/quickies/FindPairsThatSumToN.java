@@ -41,7 +41,7 @@ public class FindPairsThatSumToN
      * This approach sorts the array first.  It keeps 2 pointers.  One at the start of the array,
      * and one at the end of the array.  If the current numbers sum to N, then that's a pair.  Otherwise,
      * if the sum of the first and last number is less than N, then advance the first pointer.  Or,
-     * if the sum of the first and the last number is greater than N, advnace the last pointer.
+     * if the sum of the first and the last number is greater than N, advance the last pointer.
      */
     public Map<Integer, Integer> findPairsSort(int[] nums, int N)
     {
