@@ -68,7 +68,7 @@ public class ReverseNodesTest
     {
         Node<String> node = null;
 
-        Node<String> actual = ReverseNodes.reverseRecursiveSimple(null, node);
+        Node<String> actual = ReverseNodes.reverseRecursiveSimple(node);
         assertNull(actual);
     }
 
@@ -77,7 +77,7 @@ public class ReverseNodesTest
     {
         Node<String> node = new Node<>("A", null);
 
-        Node<String> actual = ReverseNodes.reverseRecursiveSimple(null, node);
+        Node<String> actual = ReverseNodes.reverseRecursiveSimple(node);
         assertEquals(new Node<>("A", null), actual);
     }
 
@@ -86,7 +86,7 @@ public class ReverseNodesTest
     {
         Node<String> node = new Node<>("A", new Node<>("B", null));
 
-        Node<String> actual = ReverseNodes.reverseRecursiveSimple(null, node);
+        Node<String> actual = ReverseNodes.reverseRecursiveSimple(node);
         assertEquals(new Node<>("B", new Node<>("A", null)), actual);
     }
 
@@ -95,7 +95,7 @@ public class ReverseNodesTest
     {
         Node<String> node = new Node<>("A", new Node<>("B", new Node<>("C", null)));
 
-        Node<String> actual = ReverseNodes.reverseRecursiveSimple(null, node);
+        Node<String> actual = ReverseNodes.reverseRecursiveSimple(node);
         assertEquals(new Node<>("C", new Node<>("B", new Node<>("A", null))), actual);
     }
 
@@ -104,7 +104,7 @@ public class ReverseNodesTest
     {
         Node<String> node = new Node<>("A", new Node<>("B", new Node<>("C", new Node<>("D", null))));
 
-        Node<String> actual = ReverseNodes.reverseRecursiveSimple(null, node);
+        Node<String> actual = ReverseNodes.reverseRecursiveSimple(node);
         assertEquals(new Node<>("D", new Node<>("C", new Node<>("B", new Node<>("A", null)))), actual);
     }
 

@@ -32,15 +32,19 @@ public class ReverseNodes
         return reverse;
     }
 
-    public static <E> Node<E> reverseRecursiveSimple(Node<E> prev, Node<E> curr)
+    public static <E> Node<E> reverseRecursiveSimple(Node<E> node)
+    {
+        return doReverseRecursiveSimple(null, node);
+    }
+
+    private static <E> Node<E> doReverseRecursiveSimple(Node<E> prev, Node<E> curr)
     {
         if (curr == null) return curr;
 
         Node<E> next = curr.nextNode;
         curr.nextNode = prev;
 
-        if (next != null) return reverseRecursiveSimple(curr, next);
-
+        if (next != null) return doReverseRecursiveSimple(curr, next);
         return curr;
     }
 
@@ -68,16 +72,16 @@ public class ReverseNodes
         Node<String> nodes = new Node<>("A", new Node<>("B", new Node<>("C", new Node<>("D", null))));
         System.out.println("Reversing nodes recursively: " + nodes);
         Node<String> reversedNodes = ReverseNodes.reverseRecursive(nodes);
-        System.out.println("Recursively Reversed: "+reversedNodes);
+        System.out.println("Recursively Reversed: " + reversedNodes);
 
         nodes = new Node<>("A", new Node<>("B", new Node<>("C", new Node<>("D", null))));
-        System.out.println("\nReversing nodes recursively: " + nodes);
-        reversedNodes = ReverseNodes.reverseRecursiveSimple(null, nodes);
-        System.out.println("Recursively Reversed: "+reversedNodes);
+        System.out.println("\nReversing nodes recursively (simple version): " + nodes);
+        reversedNodes = ReverseNodes.reverseRecursiveSimple(nodes);
+        System.out.println("Recursively Reversed (simple version): " + reversedNodes);
 
         nodes = new Node<>("A", new Node<>("B", new Node<>("C", new Node<>("D", null))));
         System.out.println("\nReversing nodes iteratively: " + nodes);
         reversedNodes = ReverseNodes.reverseIterative(nodes);
-        System.out.println("Iteratively Reversed: "+reversedNodes);
+        System.out.println("Iteratively Reversed: " + reversedNodes);
     }
 }
