@@ -52,7 +52,7 @@ public class FindMissingNumber
         int N = Integer.parseInt(args[0]);
         int missingNumExpected = Integer.parseInt(args[1]);
 
-        List<Integer> nums = new ArrayList<>(N);
+        List<Integer> nums = new ArrayList<>(N-1);
         for (int i = 1; i < N+1; i++)
         {
             if (i != missingNumExpected)
