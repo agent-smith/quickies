@@ -27,7 +27,7 @@ public class FindDuplicateNumber
         assert(nums[0] == 1);
 
         // In the case that there's only 2 elements, the duplicate number should be 1, so no need to do anything else.
-        if (nums.length == 2 && nums[0] == 1)
+        if (nums.length == 2)
         {
             return 1;
         }
