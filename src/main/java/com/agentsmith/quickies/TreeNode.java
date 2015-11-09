@@ -1,5 +1,7 @@
 package com.agentsmith.quickies;
 
+import static java.lang.String.format;
+
 /**
  * Simple Node, containing a value, and a link to a left and right child Node.
  * <p/>
@@ -9,13 +11,24 @@ package com.agentsmith.quickies;
  */
 public class TreeNode<KEY, VAL>
 {
+    TreeNode<KEY, VAL> parent;
+
     TreeNode<KEY, VAL> left;
     TreeNode<KEY, VAL> right;
+
     KEY key;
     VAL value;
 
-    TreeNode(KEY key, VAL value, TreeNode<KEY, VAL> left, TreeNode<KEY, VAL> right)
-    {
+    TreeNode(TreeNode<KEY, VAL> parent, KEY key, VAL value) {
+        this(parent, key, value, null, null);
+    }
+
+    TreeNode(KEY key, VAL value, TreeNode<KEY, VAL> left, TreeNode<KEY, VAL> right) {
+        this(null, key, value, left, right);
+    }
+
+    TreeNode(TreeNode<KEY, VAL> parent, KEY key, VAL value, TreeNode<KEY, VAL> left, TreeNode<KEY, VAL> right) {
+        this.parent = parent;
         this.key = key;
         this.value = value;
         this.left = left;
@@ -38,20 +51,13 @@ public class TreeNode<KEY, VAL>
 
         if (left == null && right == null)
         {
-            return "Node{" + value + ",\n" +
-                    spaces + "left=null,\n" +
-                    spaces + "right=null\n" +
-                    spaces + "}";
+            return format("Node{%s,\n%sleft=null,\n%sright=null\n%s}",
+                    value, spaces, spaces, spaces);
         }
 
-        StringBuilder sb = new StringBuilder();
-        sb.append("Node{")
-                .append(value).append(",\n")
-                .append(spaces).append("left=").append((left == null) ? "null" : left.doToString(level+2)).append(",\n")
-                .append(spaces).append("right=").append((right == null) ? "null" : right.doToString(level+2)).append(
-                "\n")
-                .append(spaces).append("}");
-
-        return sb.toString();
+        return format("Node {%s,\n%sleft=%s,\n%sright=%s\n%s}",
+                value, spaces,
+                (left == null) ? "null" : left.doToString(level + 2), spaces,
+                (right == null) ? "null" : right.doToString(level + 2), spaces);
     }
 }

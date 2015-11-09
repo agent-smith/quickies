@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Move, starting at upper left (0,0) to bottom right, by only going right or down,
+ * while avoiding any obstructions (given a List of blocked Points).
  */
 public class MoveRightOrDown
 {
@@ -71,7 +73,7 @@ public class MoveRightOrDown
         List<Point> blockedPoints = new ArrayList<>();
         blockedPoints.add(new Point(1, 0));
 
-        System.out.println("Moving robot from upper left (0,0) to bottom right (" + M + ", " + N + ") " +
+        System.out.println("Moving from upper left (0,0) to bottom right (" + M + ", " + N + ") " +
                            "by only going right or down, and avoiding the following obstructions: " + blockedPoints);
 
         MoveRightOrDown f = new MoveRightOrDown(M, N, blockedPoints);
