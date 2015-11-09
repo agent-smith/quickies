@@ -3,13 +3,14 @@ package com.agentsmith.quickies;
 import static java.lang.String.format;
 
 /**
- * Simple Node, containing a value, and a link to a left and right child Node.
+ * A Node in a Tree, containing a reference to its parent, a key and value,
+ * and a link to left and right child Tree Nodes.
  * <p/>
  * User: rmarquez
  * Date: 7/28/13
  * Time: 12:15 AM
  */
-public class TreeNode<KEY, VAL>
+public class TreeNode<KEY extends Comparable<KEY>, VAL>
 {
     TreeNode<KEY, VAL> parent;
 
